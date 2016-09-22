@@ -7,6 +7,8 @@ var GameItem = React.createClass({
   },
 
   render: function() {
-    return <li> {title} : {gender} </li>;
+    return (<li> {this.props.title} : {this.props.gender} </li>);
   }
 });
+
+module.exports = GameItem;

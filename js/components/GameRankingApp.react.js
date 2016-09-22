@@ -1,21 +1,22 @@
 var React = require('react');
 var GameCreator = require('./GameCreator.react');
 var GameList = require('./GameList.react');
+var GameStore = require('../stores/GameStore');
 
-var getRankingState() {
+function getRankingState() {
   return {
-    games: GameStore.all();
+    games: GameStore.all()
   }
 }
 
 var GameRankingApp = React.createClass({
 
   getInitialState: function() {
-    getRankingState();
+    return getRankingState();
   },
 
   componentDidMount: function() {
-    GameTodo.addChangeListener(this._onChange);
+    GameStore.addChangeListener(this._onChange);
   },
 
   render: function() {
@@ -23,7 +24,7 @@ var GameRankingApp = React.createClass({
       <div>
         My app
         <GameCreator />
-        <GameList />
+        <GameList games={this.state.games}/>
       </div>
 
     );

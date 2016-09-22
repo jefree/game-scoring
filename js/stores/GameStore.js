@@ -1,6 +1,7 @@
 var AppDispatcher = require('../dispatcher/AppDispatcher');
 var EventEmitter = require('events').EventEmitter;
 var assign = require('object-assign');
+var GameConstants = require('../constants/GameConstants');
 
 var games = []; // {title: 'a title', gender: 'a gender'}
 
@@ -20,13 +21,17 @@ var GameStore = assign({}, EventEmitter.prototype, {
 
   emitChange: function() {
     this.emit(CHANGE_EVENT);
-  }
+  },
+
+  addChangeListener: function(cb) {
+    this.on(CHANGE_EVENT, cb);
+  },
 });
 
 AppDispatcher.register(function(action) {
   switch(action.actionType) {
     case GameConstants.GAME_CREATE:
-      createGame(action);
+      createGame(action.title, action.gender);
       GameStore.emitChange();
       break;
   }

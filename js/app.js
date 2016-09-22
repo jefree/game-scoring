@@ -1,8 +1,8 @@
-var MyApp = require('./components/MyApp.react');
+var GameRankingApp = require('./components/GameRankingApp.react');
 var React = require('react');
 var ReactDom = require('react-dom');
 
 ReactDom.render(
-  <MyApp />,
+  <GameRankingApp />,
   document.getElementById('react')
 );

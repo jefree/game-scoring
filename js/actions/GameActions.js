@@ -2,7 +2,7 @@ var AppDispatcher = require('../dispatcher/AppDispatcher');
 var GameConstants = require('../constants/GameConstants');
 
 var GameActions = {
-  create: function() {
+  create: function(title, gender) {
     AppDispatcher.dispatch({
       actionType: GameConstants.GAME_CREATE,
       title: title,
@@ -10,3 +10,5 @@ var GameActions = {
     });
   }
 }
+
+module.exports = GameActions;

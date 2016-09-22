@@ -1,4 +1,9 @@
 var React = require('react');
+var GameActions = require('../actions/GameActions');
+
+function createGame(event) {
+  GameActions.create('title1', 'gender1');
+}
 
 var GameCreator = React.createClass({
   
@@ -7,7 +12,7 @@ var GameCreator = React.createClass({
       <div>
         <input name="title" />
         <input name="gender" />
-        <button> Crear </button>
+        <button onClick={createGame}> Crear </button>
       </div>
     );
   }
