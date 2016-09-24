@@ -23,7 +23,7 @@ var GameRankingApp = React.createClass({
     return (
       <div>
         My app
-        <GameCreator />
+        <GameCreator ref='creator'/>
         <GameList games={this.state.games}/>
       </div>
 
