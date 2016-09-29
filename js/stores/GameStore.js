@@ -7,11 +7,21 @@ var games = []; // {title: 'a title', gender: 'a gender'}
 
 var CHANGE_EVENT = 'change';
 
-function createGame(title, gender) {
+function isValidGame(game) {
+  return game.title != '' && game.gender != '';
+}
+
+function addGame(game) {
   games.push({
-    title: title,
-    gender: gender
+    title: game.title,
+    gender: game.gender
   });
+}
+
+function createGame(game) {
+  if (isValidGame(game)) {
+    addGame(game);
+  }
 }
 
 var GameStore = assign({}, EventEmitter.prototype, {
@@ -31,7 +41,7 @@ var GameStore = assign({}, EventEmitter.prototype, {
 AppDispatcher.register(function(action) {
   switch(action.actionType) {
     case GameConstants.GAME_CREATE:
-      createGame(action.title, action.gender);
+      createGame(action.game);
       GameStore.emitChange();
       break;
   }

@@ -1,8 +1,6 @@
 var React = require('react');
 var GameActions = require('../actions/GameActions');
 
-
-
 var GameCreator = React.createClass({
   getInitialState: function() {
     return {
@@ -29,10 +27,7 @@ var GameCreator = React.createClass({
   },
 
   createGame: function(event) {
-    if(this.state.title == "" || this.state.gender == "") return;
-
-    GameActions.create(this.state.title, this.state.gender);
-    this.setState({title: "", gender: ""});
+    GameActions.create(this.state);
   }
 });
 
