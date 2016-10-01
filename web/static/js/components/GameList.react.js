@@ -15,16 +15,18 @@ var GameList = React.createClass({
     return (
       <div className="game-list">
         <h2> Game List </h2>
-        <div className="col-md-4">
-          <h2>Title</h2>
+        <div className="row">
+          <div className="col-md-4">
+            <h2>Title</h2>
+          </div>
+          <div className="col-md-4">
+            <h2>Gender</h2>
+          </div>
+          <div className="col-md-4">
+            <h2>Actions</h2>
+          </div>
         </div>
-        <div className="col-md-4">
-          <h2>Gender</h2>
-        </div>
-        <div className="col-md-4">
-          <h2>Actions</h2>
-        </div>
-        <ul>{games}</ul>
+        <div>{games}</div>
       </div>
     )
   }
