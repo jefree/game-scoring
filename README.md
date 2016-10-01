@@ -1,3 +1,3 @@
-# react-boilerplate-es5
+# Game Ranking App
 
-A boilerplate for reactJS with ecmascript 5 and less
+Simple to rank games, build with phoenix web framework (elixir) and ReactJS.
