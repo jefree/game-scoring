@@ -7,7 +7,18 @@ var GameItem = React.createClass({
   },
 
   render: function() {
-    return (<li> {this.props.title} : {this.props.gender} </li>);
+    return (
+      <div className="row game-item">
+        <div className="col-md-4">
+          <h3>{this.props.title}</h3>
+        </div>
+        <div className="col-md-4">
+          <h3>{this.props.gender}</h3>
+        </div>
+        <div className="col-md-4">
+        </div>
+      </div>
+    );
   }
 });
 

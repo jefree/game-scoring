@@ -10,11 +10,13 @@ var GameCreator = React.createClass({
   },
   render: function() {
     return (
-      <div>
-        <input value={this.state.title} onChange={this.handleTitleChange}/>
-        <input value={this.state.gender} onChange={this.handleGenderChange}/>
-        <button onClick={this.createGame} disabled={this.disableCreate()}> Crear </button>
-      </div>
+      <form className="form-inline">
+        <div className="form-group">
+          <input value={this.state.title} onChange={this.handleTitleChange} className="form-control" placeholder="Title"/>
+          <input value={this.state.gender} onChange={this.handleGenderChange} className="form-control" placeholder="Gender"/>
+        </div>
+        <button onClick={this.createGame} disabled={this.disableCreate()} className="btn btn-primary"> Crear </button>
+      </form>
     );
   },
 

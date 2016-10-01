@@ -21,9 +21,9 @@ var GameRankingApp = React.createClass({
 
   render: function() {
     return (
-      <div>
-        My app
-        <GameCreator ref='creator'/>
+      <div className="container col-md-6">
+        <h1>My App</h1>
+        <GameCreator />
         <GameList games={this.state.games}/>
       </div>
 
